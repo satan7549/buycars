@@ -7,10 +7,6 @@ const sendToken = (res, stausCode, user) => {
     ),
     httpOnly: true,
   };
-  // * 24 * 60 * 60
-  //   sameSite: "none",
-  //   secure: true,
-  //   path: "/",
 
   res.status(stausCode).cookie("token", token, options).json({
     success: true,
@@ -20,3 +16,4 @@ const sendToken = (res, stausCode, user) => {
 };
 
 module.exports = sendToken;
+
