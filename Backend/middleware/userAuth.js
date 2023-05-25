@@ -4,11 +4,13 @@ const userModel = require("../models/userModels");
 
 // Middleware to check if the user is authenticated
 const isUserAuthenticated = catchAsyncError(async (req, res, next) => {
-  const { token } = req.cookies;
+
+  const token = req.headers?.authorization;
 
   // Check if the token exists
   if (!token) {
     return res.status(401).json({
+      success: false,
       message: "Please Login First to access this",
     });
   }
