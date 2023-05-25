@@ -4,7 +4,7 @@ import Login from "../Pages/Login";
 import SignUp from "../Pages/SignUp";
 import Home from "../Pages/Home";
 import PrivateRoute from "../Routes/PriveateRoute";
-import DealerInventry from "../Pages/DealerInventry";
+import AddCar from "../Pages/AddCar";
 
 const AllRoutes = () => {
   return (
@@ -23,7 +23,7 @@ const AllRoutes = () => {
         path="/inventry"
         element={
           <PrivateRoute>
-            <DealerInventry />
+            <AddCar />
           </PrivateRoute>
         }
       />
