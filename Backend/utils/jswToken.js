@@ -1,14 +1,7 @@
 const sendToken = (res, stausCode, user) => {
   const token = user.getjwtToken();
-  //options for cookie
-  const options = {
-    expires: new Date(
-      Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
-    ),
-    httpOnly: true,
-  };
 
-  res.status(stausCode).cookie("token", token, options).json({
+  res.status(stausCode).json({
     success: true,
     user,
     token,
@@ -16,4 +9,3 @@ const sendToken = (res, stausCode, user) => {
 };
 
 module.exports = sendToken;
-
