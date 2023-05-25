@@ -1,19 +1,15 @@
 const express = require("express");
 const cors = require("cors");
-const cookieParser = require("cookie-parser");
 const app = express();
 
 app.use(
   cors({
-    origin: "*"
+    origin: "*",
   })
 );
-// ["http://localhost:3000","*"],
-//     methods: ["POST", "GET"],
-//     credentials: true,
+
 
 app.use(express.json());
-app.use(cookieParser());
 
 app.get("/", (req, res) => {
   res.send("Hello");
@@ -21,7 +17,11 @@ app.get("/", (req, res) => {
 
 /* import all routes */
 const user = require("./routes/user.route");
+const OEM = require("./routes/oem.route");
+const MP_Inventory = require("./routes/inventory.route");
 
 app.use("/user", user);
+app.use("/oem", OEM);
+app.use("/inventory", MP_Inventory);
 
 module.exports = app;
