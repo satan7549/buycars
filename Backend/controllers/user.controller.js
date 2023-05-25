@@ -30,7 +30,7 @@ const registerUser = catchAsyncErrors(async (req, res, next) => {
 // Login User
 const userLogin = catchAsyncErrors(async (req, res, next) => {
   const { email, password } = req.body;
-  console.log(email, password);
+  
   if (!email || !password) {
     return res.status(400).json({
       success: false,
@@ -64,12 +64,6 @@ const userLogin = catchAsyncErrors(async (req, res, next) => {
 
 // Logout User
 const logoutUser = catchAsyncErrors(async (req, res, next) => {
-  // Clear the token cookie
-  res.cookie("token", null, {
-    expires: new Date(Date.now()),
-    httpOnly: true,
-  });
-
   res.status(200).json({
     success: true,
     message: "Logged Out",
@@ -77,11 +71,21 @@ const logoutUser = catchAsyncErrors(async (req, res, next) => {
 });
 
 // Get All Users
-const getAllUsers = catchAsyncErrors((req, res, next) => {
-  res.status(200).json({
-    success: true,
-    message: "All user",
-  });
+const getAllUsers = catchAsyncErrors(async (req, res, next) => {
+  try {
+    // console.log("req", req.user);
+    const ID = req.user._id;
+    const users = await userModel.find(ID);
+    res.status(200).json({
+      success: true,
+      data: users,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Error retrieving users",
+    });
+  }
 });
 
 module.exports = {
