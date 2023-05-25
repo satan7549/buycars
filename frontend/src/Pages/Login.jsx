@@ -22,10 +22,10 @@ const initState = {
 const Login = () => {
   const [loginDetails, setLoginDetails] = useState(initState);
   const { email, password } = loginDetails;
-  const { loading, data, error } = useSelector((store) => store.auth);
+  const { data } = useSelector((store) => store.auth);
   const { isAuthenticated } = data;
   const { state } = useLocation();
-  console.log(state);
+ 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
