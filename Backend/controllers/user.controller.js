@@ -6,7 +6,7 @@ const sendToken = require("../utils/jswToken");
 // Register User
 const registerUser = catchAsyncErrors(async (req, res, next) => {
   const { name, email, password } = req.body;
-  console.log(name, email, password);
+  
   if (!name || !email || !password) {
     return res.status(400).json({
       success: false,
