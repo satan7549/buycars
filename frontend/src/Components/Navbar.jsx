@@ -13,7 +13,6 @@ import { useDispatch } from "react-redux";
 import { NavLink, useLocation } from "react-router-dom";
 import { logout } from "../Redux/Auth/Auth.action";
 
-
 const Navbar = () => {
   // Retrieve the current location
   const location = useLocation();
@@ -77,6 +76,18 @@ const Navbar = () => {
             >
               <Text fontSize={"20px"} fontWeight="500">
                 Sign up
+              </Text>
+            </Link>
+            <Link
+              to={"/inventry"}
+              as={NavLink}
+              borderBottom={
+                location.pathname === "/inventry" ? "5px solid" : undefined
+              }
+              _hover={{ borderBottom: "5px solid", cursor: "pointer" }}
+            >
+              <Text fontSize={"20px"} fontWeight="500">
+                Inventry
               </Text>
             </Link>
             <Button onClick={handleLogout}>Logout</Button>
