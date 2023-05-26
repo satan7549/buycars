@@ -5,6 +5,7 @@ import SignUp from "../Pages/SignUp";
 import Home from "../Pages/Home";
 import PrivateRoute from "../Routes/PriveateRoute";
 import AddCar from "../Pages/AddCar";
+import CarDetail from "../Pages/CarDetail";
 
 const AllRoutes = () => {
   return (
@@ -20,13 +21,14 @@ const AllRoutes = () => {
         }
       />
       <Route
-        path="/inventry"
+        path="/add"
         element={
           <PrivateRoute>
             <AddCar />
           </PrivateRoute>
         }
       />
+      <Route path="/detail/:id" element={<CarDetail />} />
     </Routes>
   );
 };
