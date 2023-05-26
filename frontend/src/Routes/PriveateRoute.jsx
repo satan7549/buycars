@@ -6,7 +6,7 @@ import { Navigate, useLocation } from "react-router-dom";
 const PrivateRoute = ({ children }) => {
   const { data } = useSelector((store) => store.auth);
   const { pathname } = useLocation();
-  console.log("prtv",pathname)
+
   if (data.token) {
     return <>{children}</>;
   } else {
