@@ -79,15 +79,15 @@ const Navbar = () => {
               </Text>
             </Link>
             <Link
-              to={"/inventry"}
+              to={"/add"}
               as={NavLink}
               borderBottom={
-                location.pathname === "/inventry" ? "5px solid" : undefined
+                location.pathname === "/add" ? "5px solid" : undefined
               }
               _hover={{ borderBottom: "5px solid", cursor: "pointer" }}
             >
               <Text fontSize={"20px"} fontWeight="500">
-                Inventry
+                Add Inventory
               </Text>
             </Link>
             <Button onClick={handleLogout}>Logout</Button>
