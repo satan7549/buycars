@@ -13,7 +13,6 @@ const CarDetail = () => {
     dispatch(getSingleInventoryItems(id));
   }, [id, dispatch]);
 
-  console.log("cardetail page",singleItem);
   return (
     <Box mt={"200px"}>
       <Box>

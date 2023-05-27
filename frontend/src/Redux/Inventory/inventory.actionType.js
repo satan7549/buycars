@@ -8,8 +8,6 @@ export const GET_SINGLE_INVENTORY_ITEM_LOADING = "single/inventory/items/get/lao
 export const GET_SINGLE_INVENTORY_ITEM_SUCCESS = "single/inventory/items/get/success";
 export const GET_SINGLE_INVENTORY_ITEM_ERROR = "single/inventory/items/get/error";
 
-
-
 // add item to inventory
 export const ADD_ITEM_TO_INVENTORY_LOADING = "iNVENTORY/items/add/laoding";
 export const ADD_ITEM_TO_INVENTORY_SUCCESS = "iNVENTORY/items/add/success";

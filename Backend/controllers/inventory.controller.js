@@ -4,6 +4,7 @@ const cloudinary = require("cloudinary");
 
 // Function to add a new marketplace inventory entry
 const addMPInventory = catchAsyncErrors(async (req, res, next) => {
+  console.log(req.body);
   let images = [];
 
   if (typeof req.body.images === "string") {
@@ -136,5 +137,4 @@ module.exports = {
   getUserMPInventry,
   updateInventoryItem,
   deleteInventory,
-
 };

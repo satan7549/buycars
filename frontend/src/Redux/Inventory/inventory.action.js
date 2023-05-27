@@ -56,7 +56,6 @@ export const addItemToInventory =
       };
       let res = await axios.post(
         `${baseURL}/add`,
-
         {
           ...InventoryInfo,
         },
@@ -93,7 +92,6 @@ export const removeItemFromInventory =
 export const updateInventoryItem =
   (token, InventoryId, update) => async (dispatch) => {
     dispatch({ type: UPDATE_INVENTORY_ITEM_LOADING });
-
     try {
       const headers = {
         Authorization: `${token}`, // Include the token in the headers

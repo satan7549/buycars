@@ -1,5 +1,9 @@
 const express = require("express");
 const cors = require("cors");
+const bodyParser = require('body-parser');
+
+
+
 const app = express();
 
 app.use(
@@ -10,6 +14,9 @@ app.use(
 
 
 app.use(express.json());
+
+// Add this middleware before your route handlers
+app.use(bodyParser.json({ limit: '10mb' })); // Increase the limit as needed
 
 app.get("/", (req, res) => {
   res.send("Hello");
